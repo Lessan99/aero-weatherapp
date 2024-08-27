@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.aeron'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 
 java {
 	toolchain {
@@ -25,4 +25,10 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+// Build executable jar
+tasks.jar {
+	enabled = true
+	// Remove `plain` postfix from jar file name
+	archiveClassifier.set("")
 }
